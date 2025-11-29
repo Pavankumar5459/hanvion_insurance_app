@@ -1,4 +1,97 @@
 import streamlit as st
+# -----------------------------
+# Global Hanvion UI Styling
+# -----------------------------
+
+global_css = """
+<style>
+
+    /* Global font */
+    html, body, [class*="css"] {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+                     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #1e293b;
+    }
+
+    /* Page width */
+    .block-container {
+        padding-top: 2.2rem;
+        max-width: 1180px;
+        margin: auto;
+    }
+
+    /* Headings */
+    h1 {
+        font-weight: 700 !important;
+        margin-bottom: 12px;
+        color: #1e293b;
+    }
+
+    h2, h3 {
+        font-weight: 600 !important;
+        color: #334155;
+    }
+
+    /* Generic card */
+    .hanvion-card {
+        background: #ffffff;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        padding: 22px;
+        box-shadow: 0px 4px 16px rgba(0,0,0,0.04);
+    }
+
+    /* Section banner */
+    .hanvion-banner {
+        background: linear-gradient(90deg, #eef2ff, #e0e7ff);
+        border-radius: 14px;
+        padding: 26px;
+        margin: 18px 0;
+        border: 1px solid #c7d2fe;
+    }
+
+    /* Secondary text */
+    .hanvion-text-muted {
+        color: #64748b;
+        font-size: 15px;
+    }
+
+    /* Buttons */
+    .stButton>button {
+        background: #4f46e5 !important;
+        color: white !important;
+        border-radius: 8px !important;
+        padding: 8px 18px !important;
+        border: none;
+        transition: 0.2s ease;
+        font-weight: 600;
+    }
+
+    .stButton>button:hover {
+        background: #4338ca !important;
+    }
+
+    /* Tables */
+    table {
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th {
+        background: #f1f5f9 !important;
+        font-weight: 600 !important;
+        padding: 10px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+</style>
+"""
+st.markdown(global_css, unsafe_allow_html=True)
 
 # -----------------------------
 # Import all pages
