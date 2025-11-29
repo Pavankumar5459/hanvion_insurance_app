@@ -1,4 +1,21 @@
-drug,strength,cash_low,cash_high,discount_low,discount_high,copay
-Metformin,500 mg,8,20,4,10,0
-Lisinopril,10 mg,10,18,4,11,0
-Atorvastatin,20 mg,15,28,6,12,0
+drug,strength,cash_low,cash_high,discount_low,discount_high,copay,conditions
+Metformin,500 mg,8,20,4,10,0,Diabetes
+Metformin,1000 mg,10,25,5,12,0,Diabetes
+Lisinopril,10 mg,9,18,4,11,0,Hypertension
+Lisinopril,20 mg,11,22,5,13,0,Hypertension
+Atorvastatin,20 mg,12,28,6,14,0,High Cholesterol
+Atorvastatin,40 mg,14,35,7,16,0,High Cholesterol
+Sertraline,50 mg,15,35,8,18,5,Anxiety|Depression
+Sertraline,100 mg,18,40,9,22,5,Anxiety|Depression
+Amlodipine,5 mg,6,14,3,9,0,Hypertension
+Amlodipine,10 mg,9,18,4,10,0,Hypertension
+Omeprazole,20 mg,10,28,5,14,0,GERD
+Omeprazole,40 mg,12,32,6,15,0,GERD
+Levothyroxine,50 mcg,9,20,4,9,0,Thyroid
+Levothyroxine,75 mcg,11,23,5,11,0,Thyroid
+Albuterol,Inhaler,20,55,15,35,10,Asthma
+Citalopram,20 mg,12,30,6,15,5,Anxiety|Depression
+Amoxicillin,500 mg,8,18,5,12,0,Infection
+Azithromycin,250 mg,14,35,10,22,0,Infection
+Prednisone,20 mg,6,14,4,10,0,Inflammation
+Gabapentin,300 mg,9,22,5,12,0,Nerve Pain
