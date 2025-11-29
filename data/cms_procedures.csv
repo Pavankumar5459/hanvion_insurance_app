@@ -1,0 +1,16 @@
+code,description,setting,median_price,min_price,max_price,sample_size
+99213,Office visit, established patient (20-29 min),Clinic,95,60,210,850
+99203,Office visit, new patient (30-44 min),Clinic,160,95,320,720
+99214,Office visit, established patient (30-39 min),Clinic,140,90,280,640
+99285,Emergency department visit, high severity,Hospital,1850,650,5200,430
+70551,MRI brain without contrast,Imaging,780,350,2400,510
+71045,Chest X-ray, single view,Imaging,85,40,260,560
+80053,Comprehensive metabolic panel (blood test),Lab,55,20,145,910
+93000,Electrocardiogram (ECG),Clinic,65,25,210,780
+43239,Upper endoscopy with biopsy,Hospital,2450,900,7100,260
+29881,Knee arthroscopy with meniscectomy,Hospital,8400,4200,24800,190
+A0429,Ambulance transport, basic life support,Emergency,820,350,2650,150
+36415,Blood draw,Lab,15,5,45,1050
+87086,Urine culture,Lab,48,18,135,730
+J1885,Injection, ketorolac (pain medication),Clinic,38,10,120,420
+J1100,Injection, dexamethasone,Clinic,32,8,105,390
