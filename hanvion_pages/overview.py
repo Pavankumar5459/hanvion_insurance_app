@@ -3,39 +3,50 @@ import streamlit as st
 def page_overview():
 
     st.markdown("""
-        <h1 style="font-size: 38px; font-weight: 700;">Welcome to Hanvion Health</h1>
-        <p style="font-size: 17px; max-width: 780px; color:#555;">
-            Navigate U.S. healthcare confidently with clear guidance on insurance, 
-            medical costs, symptom evaluation, and preventive health insights. 
-            Designed especially for students, families, and people without insurance.
+        <h1>Welcome to Hanvion Health</h1>
+        <p class="hanvion-text-muted" style="max-width:740px;">
+            Navigate U.S. healthcare confidently with guidance on insurance, medical prices,
+            symptom evaluation, and preventive health insights. Built especially for 
+            international students, families, and uninsured populations.
         </p>
-        <br>
     """, unsafe_allow_html=True)
 
+    st.markdown("""
+        <div class="hanvion-banner">
+            <h3>What you can do</h3>
+            <p class="hanvion-text-muted">
+                Explore clear cost estimators, insurance eligibility tools, doctor visit pricing,
+                medication price estimates, preventive assessments, and structured symptom mapping.
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("""
-    <div style="display:flex; gap:28px; flex-wrap:wrap;">
+        <div style="display:flex; gap:26px; flex-wrap:wrap; margin-top:20px;">
 
-        <div style="flex:1; min-width:280px; background:#ffffff; padding:25px;
-                    border-radius:12px; border:1px solid #eee;
-                    box-shadow:0px 4px 14px rgba(0,0,0,0.05);">
-            <h3 style="margin-top:0;">Health Profile</h3>
-            <p>Your personalized preventive health insights based on BMI, lifestyle, sleep, habits, and more.</p>
+            <div class="hanvion-card" style="flex:1; min-width:280px;">
+                <h3>Health Profile</h3>
+                <p class="hanvion-text-muted">
+                    Personalized preventive insights based on BMI, lifestyle, sleep, stress,
+                    diet, and daily habits.
+                </p>
+            </div>
+
+            <div class="hanvion-card" style="flex:1; min-width:280px;">
+                <h3>Symptom Explorer</h3>
+                <p class="hanvion-text-muted">
+                    Map symptoms to likely body systems using a simple, structured
+                    medical reference model.
+                </p>
+            </div>
+
+            <div class="hanvion-card" style="flex:1; min-width:280px;">
+                <h3>Insurance & Cost Tools</h3>
+                <p class="hanvion-text-muted">
+                    Check insurance cost estimates, self-pay vs allowed amounts,
+                    and compare doctor visit prices and medication pricing.
+                </p>
+            </div>
+
         </div>
-
-        <div style="flex:1; min-width:280px; background:#ffffff; padding:25px;
-                    border-radius:12px; border:1px solid #eee;
-                    box-shadow:0px 4px 14px rgba(0,0,0,0.05);">
-            <h3 style="margin-top:0;">Symptom Explorer</h3>
-            <p>Quickly map your symptoms to likely body systems using a structured medical reference model.</p>
-        </div>
-
-        <div style="flex:1; min-width:280px; background:#ffffff; padding:25px;
-                    border-radius:12px; border:1px solid #eee;
-                    box-shadow:0px 4px 14px rgba(0,0,0,0.05);">
-            <h3 style="margin-top:0;">Cost & Insurance Tools</h3>
-            <p>Explore doctor visit costs, medication prices, and check basic insurance coverage patterns.</p>
-        </div>
-
-    </div>
     """, unsafe_allow_html=True)
