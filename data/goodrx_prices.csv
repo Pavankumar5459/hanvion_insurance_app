@@ -1,0 +1,4 @@
+drug,strength,cash_low,cash_high,discount_low,discount_high,copay
+Metformin,500 mg,8,20,4,10,0
+Lisinopril,10 mg,10,18,4,11,0
+Atorvastatin,20 mg,15,28,6,12,0
