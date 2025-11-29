@@ -8,7 +8,7 @@ def page_medication_prices():
     st.markdown(
         '<p class="hanvion-text-muted">'
         'Compare estimated medication prices across cash prices, discount programs, '
-        'and insurance copays. Powered by GoodRx-style modeled data.'
+        'and insurance copays. Based on modeled GoodRx-style reference data.'
         '</p>',
         unsafe_allow_html=True
     )
@@ -16,66 +16,72 @@ def page_medication_prices():
     st.divider()
 
     # ------------------------------
-    # SEARCH BAR
+    # LOAD DATA
     # ------------------------------
     df = pd.read_csv("data/goodrx_prices.csv")
 
-    drug_list = sorted(df["drug_name"].unique())
+    # The medication column is called **drug**
+    drug_list = sorted(df["drug"].unique())
 
+    # ------------------------------
+    # MEDICATION SELECTOR
+    # ------------------------------
     st.markdown("<h3>Select Medication</h3>", unsafe_allow_html=True)
-    drug = st.selectbox("Medication", drug_list)
+    med_name = st.selectbox("Medication", drug_list)
 
-    med = df[df["drug_name"] == drug].iloc[0]
+    # Filter matching row
+    med_row = df[df["drug"] == med_name].iloc[0]
 
-    cash_low = med["cash_low"]
-    cash_high = med["cash_high"]
-    discount_low = med["discount_low"]
-    discount_high = med["discount_high"]
-    copay = med["copay"]
+    strength = med_row["strength"]
+    cash_low = med_row["cash_low"]
+    cash_high = med_row["cash_high"]
+    discount_low = med_row["discount_low"]
+    discount_high = med_row["discount_high"]
+    copay = med_row["copay"]
 
     st.divider()
 
     # ------------------------------
-    # PRICE SUMMARY
+    # PRICE SUMMARY (3 CARDS)
     # ------------------------------
     st.markdown("<h2>Price Summary</h2>", unsafe_allow_html=True)
 
-    # ----- CASH PRICE CARD -----
+    # ----- CASH PRICE -----
     st.markdown(
         f"""
         <div class="hanvion-card">
             <h4>Cash Price</h4>
             <p style="font-size:28px; font-weight:700;">${cash_low} – ${cash_high}</p>
             <p class="hanvion-text-muted">
-                Typical retail price without insurance at most U.S. pharmacies.
+                Estimated walk-in price for {med_name} {strength} without insurance.
             </p>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    # ----- DISCOUNT CARD -----
+    # ----- DISCOUNT PRICE -----
     st.markdown(
         f"""
         <div class="hanvion-card">
             <h4>Discount Program Price</h4>
             <p style="font-size:28px; font-weight:700;">${discount_low} – ${discount_high}</p>
             <p class="hanvion-text-muted">
-                Estimated price using pharmacy discount savings programs.
+                Estimated discount price using pharmacy savings programs.
             </p>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    # ----- INSURANCE COPAY CARD -----
+    # ----- INSURANCE COPAY -----
     st.markdown(
         f"""
         <div class="hanvion-card">
             <h4>Insurance Copay</h4>
             <p style="font-size:28px; font-weight:700;">${int(copay)}</p>
             <p class="hanvion-text-muted">
-                Typical generic-tier copay with insurance.
+                Typical copay for insured patients for {med_name} {strength}.
             </p>
         </div>
         """,
