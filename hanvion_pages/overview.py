@@ -2,15 +2,16 @@ import streamlit as st
 
 def page_overview():
 
+    # Title
     st.markdown("""
         <h1>Welcome to Hanvion Health</h1>
         <p class="hanvion-text-muted" style="max-width:740px;">
-            Navigate U.S. healthcare confidently with guidance on insurance, medical prices,
-            symptom evaluation, and preventive health insights. Built especially for 
-            international students, families, and uninsured populations.
+            Navigate U.S. healthcare confidently with guidance on insurance, medical costs,
+            symptom evaluation, and preventive health insights.
         </p>
     """, unsafe_allow_html=True)
 
+    # Banner
     st.markdown("""
         <div class="hanvion-banner">
             <h3>What you can do</h3>
@@ -21,6 +22,7 @@ def page_overview():
         </div>
     """, unsafe_allow_html=True)
 
+    # 3-column cards
     st.markdown("""
         <div style="display:flex; gap:26px; flex-wrap:wrap; margin-top:20px;">
 
